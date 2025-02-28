@@ -1,38 +1,57 @@
-// Anh/ chị hãy viết chương trình cho phép nhập vào 3 đỉnh của 1 tam giác. Sau đó, chương trình sẽ kiểm tra xem đây có phải là 1 tam giác hợp lệ hay không.
-// Biết rằng 1 tam giác là hợp lệ khi nó thoải mãn điều kiện sau: tổng độ dài của 2 cạnh bất kỳ luôn lớn hơn độ dài của cạnh còn lại.
+//Bài 1: Một số phức được biểu diễn dưới dạng  
+//a = phầnthực + phần ảo*j. 
+//Viết chương trình nhập 2 số phức và in ra màn hình tổng, hiệu 2 số 
+//phức đó.
 
 #include<iostream>
 
 using namespace std;
-class Triangle {
+class SP {
 	protected:
-		float a, b, c;
+		float r, i;
 	public:
 		void Nhap();
 		void Xuat();
+		SP Tong(SP other) {
+			SP tong;
+			tong.r = r + other.r;
+			tong.i = i + other.i;
+			return tong;
+		}
+		
+		SP Hieu(SP other) {
+			SP hieu;
+			hieu.r = r - other.r;
+			hieu.i = i - other.i;
+			return hieu;
+		}
 };
 
-void Triangle::Nhap() {
-	cout << "Nhap a: "; cin >> a;
-	cout << "Nhap b: "; cin >> b;
-	cout << "Nhap c: "; cin >> c;
+void SP::Nhap() {
+	cout << "Nhap phan thuc: "; cin >> r;
+	cout << "Nhap phan ao: "; cin >> i;
 }
 
-void Triangle::Xuat() {
-	if(a>0 && b>0 && c>0) {
-		if(a+b>c && b+c>a && a+c>b) {
-			cout << "(" << a << ", " << b << ", " << c << ") tao thanh tam giac" << endl;
-		} else {
-			cout << "(" << a << ", " << b << ", " << c << ") khong tao thanh tam giac" << endl; 
-		}
-	} else {
-		cout << "(" << a << ", " << b << ", " << c << ") khong tao thanh tam giac" << endl; 
-	}
+void SP::Xuat() {
+	cout << "a = " << r << " + " << i << "j" << endl;
 }
-
 int main() {
-	Triangle a;
-	a.Nhap();
-	a.Xuat();
+	SP sp1, sp2;
+	
+	cout << "Nhap so phuc 1: " << endl;
+	sp1.Nhap();
+	sp1.Xuat();
+	
+	cout << "Nhap so phuc 2: " << endl;
+	sp2.Nhap();
+	sp2.Xuat();
+	
+	SP sum = sp1.Tong(sp2);
+	SP sub = sp1.Hieu(sp2);
+	
+	cout << "Tong: ";
+	sum.Xuat();
+	cout << "Hieu: ";
+	sub.Xuat();
 	return 0;
 }
