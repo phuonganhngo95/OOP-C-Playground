@@ -21,6 +21,7 @@ struct MH {
 
 void Nhap(MH a[], int n) {
 	for(int i = 0; i < n; i++) {
+		cout << i+1 << ")" << endl;
 		fflush(stdin);
 		cout << "Nhap ma: "; cin.getline(a[i].ma, 8);
 		cout << "Nhap ten: "; cin.getline(a[i].ten, 30);
