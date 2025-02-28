@@ -1,3 +1,6 @@
+// Anh/ chị hãy viết chương trình cho phép nhập vào 3 đỉnh của 1 tam giác. Sau đó, chương trình sẽ kiểm tra xem đây có phải là 1 tam giác hợp lệ hay không.
+// Biết rằng 1 tam giác là hợp lệ khi nó thoải mãn điều kiện sau: tổng độ dài của 2 cạnh bất kỳ luôn lớn hơn độ dài của cạnh còn lại.
+
 #include<iostream>
 
 using namespace std;
