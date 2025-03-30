@@ -41,7 +41,7 @@ void MAYGIAT::Nhap() {
 	THIETBI::Nhap();
 	fflush(stdin);
 	cout << "Nhập chế độ: "; cin.getline(chedo, 100);
-	while(strcmp(chedo, "vừa")!=0 || strcmp(chedo, "nặng")!=0) {
+	while(strcmp(chedo, "vừa")!=0 && strcmp(chedo, "nặng")!=0) {
 		cout << "Nhập lại chế độ: "; cin.getline(chedo, 100);
 	}
 }
@@ -67,7 +67,7 @@ void TULANH::Nhap() {
 	THIETBI::Nhap();
 	fflush(stdin);
 	cout << "Nhập công nghệ làm lạnh: "; cin.getline(congnghe, 100);
-	while(congnghe!="thường" && congnghe!="inverter") {
+	while(strcmp(congnghe, "thường")!=0 && strcmp(congnghe, "inverter")!=0) {
 		cout << "Nhập lại công nghệ làm lạnh: "; cin.getline(congnghe, 100);
 	}
 }
